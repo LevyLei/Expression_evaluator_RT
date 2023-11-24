@@ -1,0 +1,55 @@
+Name: Model
+Type: ModelCategoryFolder
+Children:
+- Name: Var1_Int32
+  Type: BaseDataVariableType
+  DataType: Int32
+  Value: 10
+- Name: Var2_Double
+  Type: BaseDataVariableType
+  DataType: Double
+  Value: 123.123
+- Name: Var3_Int64
+  Type: BaseDataVariableType
+  DataType: Int64
+  Value: 1
+- Name: Var4_Int32
+  Type: BaseDataVariableType
+  DataType: Int32
+  Value: 1
+- Name: Var5_String
+  Type: BaseDataVariableType
+  DataType: String
+  Value: "This is expression evaluator tests"
+- Name: Var6_DateAndTime
+  Type: BaseDataVariableType
+  DataType: DateTime
+  Value: "2023-09-09T09:09:09.0000000"
+- Name: Var7_UInt16
+  Type: BaseDataVariableType
+  DataType: UInt16
+  Value: 2
+  Children:
+  - Name: ExpressionEvaluator1
+    Type: ExpressionEvaluator
+    Children:
+    - Name: Expression
+      Type: BaseDataVariableType
+      DataType: String
+      ReferenceType: HasParameter
+      Value: "2<<(Int32)abs({0})"
+    - Name: ns=2;Source0
+      Type: BaseDataVariableType
+      DataType: BaseDataType
+      ReferenceType: HasSource
+      Children:
+      - Name: DynamicLink
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../../../Var4_Int32"
+- Name: Var8_Int32_Array
+  Type: BaseDataVariableType
+  DataType: Int32
+  ValueRank: OneDimension
+  ArrayDimensions: [6]
+  Value: [0,5,0,0,0,0]
